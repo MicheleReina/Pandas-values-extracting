@@ -9,9 +9,13 @@ def main():
                                    "PQ 200 AAA 50 LT XD",
                                    "PQ 50LT 200 AAA XD"]}
 
-    df = pd.DataFrame(data=d)
+    df = pd.DataFrame(data=d)   # Define a simple Pandas Dataframe to test the extraction phase
+    
+    # Perform extraction
     df['AAA'], df['LT'] = df['val'].str.extract(r'([\d]*) *AAA'), df['val'].str.extract(r'([\d]*) *LT')
-    print(df.head(25))
+    
+    # Show results
+    print(df.head())
 
 
 if __name__ == '__main__':
